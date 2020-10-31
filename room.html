@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<head>
+  <title>My A-Frame Scene</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+  <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script> 
+</head>
+ 
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="table-obj" src="table.obj"></a-asset-item>
+            <a-asset-item id="table-mtl" src="table.mtl"></a-asset-item>
+        </a-assets>
+        <a-assets>
+            <a-asset-item id="chair-obj" src="chair.obj"></a-asset-item>
+            <a-asset-item id="chair-mtl" src="chair.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-2 -1 -2" scale="1 1 1"></a-entity>
+        <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 .5 0" scale="1 1 1"></a-entity>
+        <rw-room position="-2 0 -3">
+            <rw-wall position="4 0 0" material="color:#866">
+            </rw-wall>
+            <rw-wall position="4 0 4" material="color:#850">
+            </rw-wall>
+            <rw-wall position="0 0 4" material="color:#366">
+            </rw-wall>
+            <rw-wall position="0 0 0" material="color:#566">
+            </rw-wall>
+            <rw-floor position= "0 0 0" material="color:#850"></rw-floor>
+            <rw-ceiling position="0 0 0" material="color:#566">
+            </rw-ceiling>
+        </rw-room>
+    </a-scene>
+</body>
