@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chair</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="chair-obj" src="chair.obj"></a-asset-item>
+            <a-asset-item id="chair-mtl" src="chair.mtl"></a-asset-item>
+        </a-assets>
+
+        <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="0 -60 -240" scale="130 130 170"></a-entity>
+    </a-scene>
+
+</body>
+
+</html>
