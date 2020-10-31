@@ -8,7 +8,7 @@
 </head>
  
 <body>
-    <a-scene>
+    <a-scene >
         <a-assets>
             <a-asset-item id="table-obj" src="table.obj"></a-asset-item>
             <a-asset-item id="table-mtl" src="table.mtl"></a-asset-item>
@@ -18,9 +18,13 @@
             <a-asset-item id="chair-mtl" src="chair.mtl"></a-asset-item>
         </a-assets>
 
-        <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="-2 -1 -2" scale="1 1 1"></a-entity>
-        <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 .5 0" scale="1 1 1"></a-entity>
-        <rw-room position="-2 0 -3">
+       
+        <rw-room position="-2 0 -3" >
+            <!-- -3.7 -0.5 2.55 -->
+            
+            <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="1.5 0.5 2.5" scale="1 1 1">
+                <a-entity obj-model="obj: #chair-obj; mtl: #chair-mtl" position="1.6 -0.2 -4" rotation="0 230 0" scale="1 1 1"></a-entity>
+            </a-entity>
             <rw-wall position="4 0 0" material="color:#866">
             </rw-wall>
             <rw-wall position="4 0 4" material="color:#850">
