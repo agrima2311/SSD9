@@ -34,13 +34,14 @@
      <a-asset-item id="desktop-computer-obj" src="desktop-computer.obj"></a-asset-item>
             <a-asset-item id="desktop-computer-mtl" src="desktop-computer.mtl"></a-asset-item>
  </a-assets> -->
- <a-assets>
+ <!-- <a-assets>
   <img id="homeThumbnail" src="../img/home_portal.png">
-</a-assets>
-<a-text id="input" font="dejavu" color="#000" value="Input value" scale="0.3 0.3 0.3" position="-0.2 2 -1"></a-text>
+</a-assets> -->
+<a-text id="input" font="dejavu" color="#FFF" value="Input value" scale="0.3 0.3 0.3" position="-0.2 2 -1"></a-text>
 <a-entity
     id="keyboard"
     position="-0.2 1.6 -0.5"
+    rotation="-30 0 0"
     a-keyboard
 >
 </a-entity>
@@ -85,11 +86,12 @@
        input = input.slice(0, -1)
        break
      case 06:
-       alert('submitted')
+      // alert('submitted')
        var keyboard = document.querySelector('#keyboard')
        document.querySelector('#input').setAttribute('value', input)
-       document.querySelector('#input').setAttribute('color', 'blue')
-       keyboard.parentNode.removeChild(keyboard)
+       window.location.replace("room.html");
+      // document.querySelector('#input').setAttribute('color', 'blue')
+       //keyboard.parentNode.removeChild(keyboard)
        return
      default:
        input = input + e.detail.value
