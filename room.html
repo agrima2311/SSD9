@@ -46,3 +46,24 @@
 </rw-wall>
 <rw-wall position="0 0 5" material="src: gg.jpg; repeat :0.25 0.4;">
 </rw-wall>
+  <rw-wall position="0 0 0" material="src: gg.jpg; repeat :0.25 0.4;">
+</rw-wall>
+<rw-floor position= "0 0 0" material="src: mocha.jpg; repeat :0.25 0.4;"></rw-floor>
+<rw-ceiling position="0 0 0" material="src: mocha.jpg ; repeat :0.25 0.4;">
+</rw-ceiling>
+ </rw-room>
+  <!-- Mouse input -->
+<a-link class="collidable" material="src: KeyboardTexture;" image="#KeyboardTexture" visual-aspect-enabled="false" href="keyboardroom.html" rotation="90 0 0"  position=" 0.46 0.92 -2.7" scale="0.25 0.25 0.25" title="."></a-link>
+<a-entity id="mouseCursor" raycaster="objects: .collidable" cursor="rayOrigin: mouse"></a-entity>
+
+ </a-scene>
+  <script> 
+  	document.getElementsByTagName('a-box')[0].addEventListener('click', function(){
+      window.location.replace("upload.html");
+    });
+    document.getElementsByTagName('a-box')[1].addEventListener('click', function(){
+      window.location.replace("download.html");
+    });
+    </script>
+</body>
+  </html>
