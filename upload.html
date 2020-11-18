@@ -9,6 +9,7 @@
 	<div class="mainDiv" valign="right">
 		
     <input class="button" type="file" id="fileButton" value="upload"/>
+    <button class="button1" id="download">Return</button>
 	</div>
 <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
 <script>
@@ -26,6 +27,7 @@
   firebase.initializeApp(config);
 
   
+  
   var uploader = document.getElementById('uploader');
   var fileButton = document.getElementById('fileButton');
   fileButton.addEventListener('change', function(e){
@@ -33,14 +35,13 @@
   var storageRef = firebase.storage().ref();
   var storageKey=storageRef.child(file.name);
   var task = storageKey.put(file);
-  window.location.replace("room.html");
-//   task.on('state_changed', function progress(snapshot) {
-//     var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
-//     uploader.value = percentage;
-//   }, function error(err) {
-//   },function complete() {
-//   });
+
 }); 
+
+    var retur = document.getElementById('download');
+  retur.addEventListener('click', function(){
+  window.location.replace("room.html");
+});
 </script>
 </body>
 </html>
