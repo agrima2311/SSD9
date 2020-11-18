@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+	<title>download</title>
+</head>
+<body>
+
+	<div class="mainDiv" valign="right">
+    <input class="button1" id ="namebox" type="text"> 
+    <button class="button1" id="download">download</button>
+	</div>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+
+  var config = {
+    apiKey: "AIzaSyC019uGPGzR0Z8ImTbLN5WG-y9XRhhIQfE",
+    authDomain: "ssd-project-6cda1.firebaseapp.com",
+    databaseURL: "https://ssd-project-6cda1.firebaseio.com",
+    projectId: "ssd-project-6cda1",
+    storageBucket: "ssd-project-6cda1.appspot.com",
+    messagingSenderId: "951787974552",
+    appId: "1:951787974552:web:b00b2ef18818124ea1c5ed",
+    measurementId: "G-6CRE2XRLW4"
+  };
+  firebase.initializeApp(config);
+
+ var download=document.getElementById('download');
+ download.addEventListener('click',function(e){
+  var name = document.getElementById('namebox').value;
+   var storage=firebase.storage();
+  storage.ref().child(name).getDownloadURL().then(function(url){
+    window.open(url,'_blank');
+    window.location.replace("room.html");
+
+  });
+ });   
+</script>
+</body>
+</html>

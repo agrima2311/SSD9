@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+	<title>upload</title>
+</head>
+<body >
+
+	<div class="mainDiv" valign="right">
+		
+    <input class="button" type="file" id="fileButton" value="upload"/>
+	</div>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+
+  var config = {
+    apiKey: "AIzaSyC019uGPGzR0Z8ImTbLN5WG-y9XRhhIQfE",
+    authDomain: "ssd-project-6cda1.firebaseapp.com",
+    databaseURL: "https://ssd-project-6cda1.firebaseio.com",
+    projectId: "ssd-project-6cda1",
+    storageBucket: "ssd-project-6cda1.appspot.com",
+    messagingSenderId: "951787974552",
+    appId: "1:951787974552:web:b00b2ef18818124ea1c5ed",
+    measurementId: "G-6CRE2XRLW4"
+  };
+  firebase.initializeApp(config);
+
+  
+  var uploader = document.getElementById('uploader');
+  var fileButton = document.getElementById('fileButton');
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref();
+  var storageKey=storageRef.child(file.name);
+  var task = storageKey.put(file);
+  window.location.replace("room.html");
+//   task.on('state_changed', function progress(snapshot) {
+//     var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+//     uploader.value = percentage;
+//   }, function error(err) {
+//   },function complete() {
+//   });
+}); 
+</script>
+</body>
+</html>

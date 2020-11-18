@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>upload</title>
+</head>
+<body>
+
+	<div class="mainDiv" valign="right">
+		<h1 valign="left">File Upload</h1>
+		<!-- <progress id="uploader" value="0" max="100">0%</progress> -->
+		<input type="file" id="fileButton" value="upload"/>
+	</div>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+
+  var config = {
+    apiKey: "AIzaSyC019uGPGzR0Z8ImTbLN5WG-y9XRhhIQfE",
+    authDomain: "ssd-project-6cda1.firebaseapp.com",
+    databaseURL: "https://ssd-project-6cda1.firebaseio.com",
+    projectId: "ssd-project-6cda1",
+    storageBucket: "ssd-project-6cda1.appspot.com",
+    messagingSenderId: "951787974552",
+    appId: "1:951787974552:web:b00b2ef18818124ea1c5ed",
+    measurementId: "G-6CRE2XRLW4"
+  };
+  firebase.initializeApp(config);
+
+  
+  var uploader = document.getElementById('uploader');
+  var fileButton = document.getElementById('fileButton');
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref(file.name);
+  var task = storageRef.put(file);
+//   task.on('state_changed', function progress(snapshot) {
+//     var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+//     uploader.value = percentage;
+//   }, function error(err) {
+//   },function complete() {
+//   });
+});   
+</script>
+</body>
+</html>
