@@ -12,3 +12,8 @@ The cubicle consists of 3 Interactive elements:
 - Pen Stand: The pen stand can be Draged and dropped anywhere in the scene. 
 - Keyboard: The user can input text using this keyboard. 
 - Upload Download function on desktop: The file can be uploaded in a firebase storage and can be downloaded on clicking the upload and download button respectively.
+
+## How to run
+- Create a local server using: `Python3 -m http.server`
+- Select room.html
+- The project is live
