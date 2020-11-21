@@ -15,5 +15,6 @@ The cubicle consists of 3 Interactive elements:
 
 ## How to run
 - Create a local server using: `Python3 -m http.server`
+- Open up any web-browser (recommended: Google chrome, mozilla firefox)
 - Select room.html
 - The project is live
